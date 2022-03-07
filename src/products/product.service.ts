@@ -4,9 +4,9 @@ import { Product } from './product.model';
 @Injectable()
 export class ProductService {
   products: Product[] = [
-    new Product('B01', 'Book 01', 19.9),
-    new Product('B02', 'Book 02', 29.9),
-    new Product('B03', 'Book 03', 39.9),
+    // new Product('B01', 'Book 01', 19.9),
+    // new Product('B02', 'Book 02', 29.9),
+    // new Product('B03', 'Book 03', 39.9),
   ];
 
   getAll(): Product[] {
