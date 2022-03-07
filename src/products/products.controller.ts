@@ -15,28 +15,27 @@ export class ProductsController {
   constructor(private productService: ProductService) {}
 
   @Get()
-  index(): Product[] {
+  async index(): Promise<Product[]> {
     return this.productService.getAll();
   }
 
   @Get(':id')
-  find(@Param() { id }): Product {
+  async find(@Param() { id }): Promise<Product> {
     return this.productService.getOne(id);
   }
 
   @Post()
-  create(@Body() product: Product) {
-    product.id = 13;
+  async create(@Body() product: Product) {
     this.productService.create(product);
   }
 
   @Put()
-  alter(@Body() product: Product): Product {
+  async alter(@Body() product: Product): Promise<[number]> {
     return this.productService.alter(product);
   }
 
   @Delete(':id')
-  delete(@Param() { id }) {
+  async delete(@Param() { id }) {
     this.productService.delete(id);
   }
 }
